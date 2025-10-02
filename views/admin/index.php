@@ -1,3 +1,5 @@
+<!-- Esta é a página de índice para o usuário administrador. -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
