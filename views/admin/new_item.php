@@ -8,15 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <title>Web Menu - Configurações</title>
+    <title>Web Menu - Novos Itens</title>
     <style>
         .sidebar {
             background-color: gray;
             height: 100vh;
             position: fixed;
-            left: -160px;
-            padding: 40px;
             transition: all .5s ease;
+            z-index: 1;
+        }
+        
+        .sidebar > ul {
+            width: 100%;
+            padding: 40px;
         }
 
         .buttonSidebar {
@@ -31,6 +35,8 @@
             cursor: pointer;
             font-size: 1.1rem;
             transition: all .5s ease;
+            z-index: 1;
+            opacity: 0;
         }
 
         .buttonSidebar:hover {
@@ -197,8 +203,13 @@
 
 <body>
     <div class="sidebar">
+        <header>
+            <h2>Web Menu</h2>
+        </header>
         <ul>
-            <li>Home</li>
+            <li>Adicionar Novos Itens</li>
+            <li>Remover Itens</li>
+            <li>Atualizar Itens</li>
             <li>Projects</li>
             <li>Contacts</li>
         </ul>
@@ -211,11 +222,11 @@
         <br />
         <hr />
         <br />
-        <h3>Configurações</h3>
+        <h3>Adicionar Novos Itens</h3>
     </header>
     <div class="container">
         <nav>
-            <a href="./prato_principal.php" target="frame">Prato Principal</a>
+            <a href="./prato_principal.php" target="frame">Prato</a>
             <a href="./acompanhamentos.php" target="frame">Acompanhamentos</a>
             <a href="./proteinas.php" target="frame">Proteínas</a>
         </nav>
@@ -225,7 +236,7 @@
     </div>
     <footer>
         <p>
-            <button>Ir para o Cardápio</button>
+            <button id="next">Ir para o Cardápio</button>
         </p>
     </footer>
 </body>
@@ -233,11 +244,33 @@
     const sidebar = document.querySelector(".sidebar");
     const buttonSidebar = document.querySelector("button.buttonSidebar");
     const widthSidebar = sidebar.getBoundingClientRect();
+    const i = document.querySelector("button > i");
+    const buttonNext = document.querySelector("button#next");
 
+    buttonNext.addEventListener("click", () => {
+        window.location.href = "../cardapio.php";
+    });
+
+    let clicked = true;
+    
+    sidebar.style.left = `-${widthSidebar.width}px`;
+    
     buttonSidebar.addEventListener("click", () => {
-        console.log(widthSidebar.width)
-        sidebar.style.left = "0px";
-        buttonSidebar.style.left = `${widthSidebar.width}px`;
+        if (clicked) {
+            console.log(widthSidebar.width)
+            sidebar.style.left = "0px";
+            buttonSidebar.style.left = `${widthSidebar.width}px`;
+            clicked = false;
+            i.classList.remove("fi-rr-angle-right");
+            i.classList.add("fi-rr-angle-left");
+        } else {
+            clicked = true;
+            sidebar.style.left = `-${widthSidebar.width}px`;
+            buttonSidebar.style.left = `0px`;
+            i.classList.remove("fi-rr-angle-left");
+            i.classList.add("fi-rr-angle-right");
+        }
     })
 </script>
+
 </html>

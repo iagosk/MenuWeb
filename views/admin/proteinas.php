@@ -135,18 +135,22 @@
         .button-form {
             background-color: purple;
             color: #fff;
-            margin: 12px;
-            padding: 12px;
+            width: 100%;
+            padding: 18px;
+            position: absolute;
             border: none;
             border-radius: 6px;
             cursor: pointer;
+            margin-top: 110px;
         }
 
         .button-form:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .input {
+            width: 90%;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -163,7 +167,7 @@
         }
 
         button:hover {
-            transform:scale(1.1);
+            transform: scale(1.1);
         }
     </style>
 </head>
