@@ -100,7 +100,7 @@
         </header>
         <hr />
         <ul>
-            <li><a href="./index.php" target="frame_index">Home</a></li>
+            <li><a href="./index.php">Home</a></li>
             <li><a href="./new_item.php" target="frame_index">Adicionar Itens</a></li>
             <li><a href="./update_item.php" target="frame_index">Atualizar Itens</a></li>
             <li><a href="./delete_item.php" target="frame_index">Remover Itens</a></li>
