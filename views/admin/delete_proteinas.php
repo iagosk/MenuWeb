@@ -1,4 +1,4 @@
-<!-- Iframe para o formulário de acompanhamentos -->
+<!-- Iframe para o formulário de proteínas -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Formulário de Acompanhamentos</title>
+    <title>Formulário das Proteínas</title>
     <style>
         * {
             margin: 0;
@@ -82,7 +82,7 @@
             width: 100%;
         }
 
-        .form-acompanhamento {
+        .form-proteina {
             height: 100%;
             width: 100%;
             background: cornsilk;
@@ -174,13 +174,13 @@
 </head>
 
 <body>
-    <div class="form-acompanhamento">
+    <div class="form-proteina">
         <form action="">
-            <h2 class="title">Adicionar novos acompanhamentos.</h2>
+            <h2 class="title">Deletar proteínas.</h2>
             <br />
             <p class="all-inputs">
             <p class="input">
-                <input type="text" name="nome_acompanhamento" id="nome_acompanhamento" class="input-form" placeholder="Item..." required>
+                <input type="text" name="nome_proteina" id="nome_proteina" class="input-form" placeholder="Item..." required>
                 <button>+</button>
             </p>
             </p>
@@ -205,7 +205,7 @@
         input.type = "text";
         input.placeholder = "Novo item...";
         input.setAttribute("class", "input-form");
-        input.setAttribute("id", "nome_acompanhamento");
+        input.setAttribute("id", "nome_proteina");
 
         // button.innerHTML = "+";
         // button.addEventListener("click", (event) => {

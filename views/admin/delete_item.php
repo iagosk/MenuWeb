@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-<title>Web Menu - Atualizar Itens</title>
+<title>Web Menu - Novos Itens</title>
 <style>
     * {
         margin: 0;
@@ -176,13 +176,13 @@
         <br />
         <hr />
         <br />
-        <h3>Atualizar Itens</h3>
+        <h3>Deletar Itens</h3>
     </header>
     <div class="container">
         <nav>
-            <a href="./update_prato_principal.php" target="frame">Prato</a>
-            <a href="./update_acompanhamentos.php" target="frame">Acompanhamentos</a>
-            <a href="./update_proteinas.php" target="frame">Proteínas</a>
+            <a href="./delete_prato_principal.php" target="frame">Prato</a>
+            <a href="./delete_acompanhamentos.php" target="frame">Acompanhamentos</a>
+            <a href="./delete_proteinas.php" target="frame">Proteínas</a>
         </nav>
         <main class="conteudo">
             <iframe src="./frame.php" frameborder="0" name="frame"></iframe>

@@ -176,7 +176,7 @@
 <body>
     <div class="form-acompanhamento">
         <form action="">
-            <h2 class="title">Adicionar novos acompanhamentos.</h2>
+            <h2 class="title">Atualizar acompanhamentos.</h2>
             <br />
             <p class="all-inputs">
             <p class="input">

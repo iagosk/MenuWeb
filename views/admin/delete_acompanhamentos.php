@@ -1,5 +1,3 @@
-<!-- Iframe para o formulário de acompanhamentos -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -176,7 +174,7 @@
 <body>
     <div class="form-acompanhamento">
         <form action="">
-            <h2 class="title">Adicionar novos acompanhamentos.</h2>
+            <h2 class="title">Deletar acompanhamentos.</h2>
             <br />
             <p class="all-inputs">
             <p class="input">
@@ -219,4 +217,6 @@
     });
 </script>
 
+</html>
+</body>
 </html>

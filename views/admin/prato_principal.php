@@ -142,6 +142,7 @@
             border-radius: 6px;
             cursor: pointer;
             margin-top: 110px;
+            font-size: 1.1rem;
         }
 
         .button-form:hover {

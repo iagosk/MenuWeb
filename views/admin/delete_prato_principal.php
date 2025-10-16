@@ -1,4 +1,4 @@
-<!-- Iframe para o formulário de acompanhamentos -->
+<!-- Iframe para o formulário de prato principal -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Formulário de Acompanhamentos</title>
+    <title>Formulário do Prato Principal</title>
     <style>
         * {
             margin: 0;
@@ -82,7 +82,7 @@
             width: 100%;
         }
 
-        .form-acompanhamento {
+        .form-prato {
             height: 100%;
             width: 100%;
             background: cornsilk;
@@ -151,10 +151,10 @@
 
         .input {
             width: 90%;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: relative;
         }
 
         button {
@@ -168,19 +168,19 @@
         }
 
         button:hover {
-            transform: scale(1.1);
+            transform:scale(1.1);
         }
     </style>
 </head>
 
 <body>
-    <div class="form-acompanhamento">
+    <div class="form-prato">
         <form action="">
-            <h2 class="title">Adicionar novos acompanhamentos.</h2>
+            <h2 class="title">Deletar pratos.</h2>
             <br />
             <p class="all-inputs">
             <p class="input">
-                <input type="text" name="nome_acompanhamento" id="nome_acompanhamento" class="input-form" placeholder="Item..." required>
+                <input type="text" name="nome_prato" id="nome_prato" class="input-form" placeholder="Digite o nome do prato..." required>
                 <button>+</button>
             </p>
             </p>
@@ -203,9 +203,9 @@
         const input = document.createElement("input");
 
         input.type = "text";
-        input.placeholder = "Novo item...";
+        input.placeholder = "Digite o nome do prato...";
         input.setAttribute("class", "input-form");
-        input.setAttribute("id", "nome_acompanhamento");
+        input.setAttribute("id", "nome_prato");
 
         // button.innerHTML = "+";
         // button.addEventListener("click", (event) => {
