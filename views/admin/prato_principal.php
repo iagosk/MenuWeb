@@ -120,7 +120,6 @@
             border: 2px solid purple;
             border-radius: 5px;
             flex-grow: 1;
-            width: 60px;
             margin: 8px;
             padding: 8px;
             font-size: 1.2em;
@@ -141,7 +140,7 @@
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            margin-top: 110px;
+            margin-top: 180px;
             font-size: 1.1rem;
         }
 
@@ -183,6 +182,16 @@
                 <input type="text" name="nome_prato" id="nome_prato" class="input-form" placeholder="Digite o nome do prato..." required>
                 <button>+</button>
             </p>
+            </p>
+                          <p class="input">
+            <select name="dia_cardapio" id="dia_cardapio" class="input-form" required>
+              <option value="null">Dia disponível no cardápio</option>
+              <option value="segunda">Segunda Feira</option>
+              <option value="terca">Terça Feira</option>
+              <option value="quarta">Quarta Feira</option>
+              <option value="quinta">Quinta Feira</option>
+              <option value="sexta">Sexta Feira</option>
+            </select>
             </p>
             <p class="input">
                 <input class="button-form" type="submit" value="Enviar" />

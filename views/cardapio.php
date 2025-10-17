@@ -82,9 +82,11 @@
         }
 
         form {
+          width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             padding: 20px;
         }
 
@@ -96,6 +98,7 @@
             font-weight: bold;
             font-size: 1.1rem;
             color: #fff;
+            width: 100%;
         }
 
         .card {
@@ -183,12 +186,12 @@
     </nav> -->
     <div class="container">
         <form action="">
-            <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
+            <div id="carouselExample" class="carousel slide col-12">
+                <div class="carousel-inner row">
+                    <div class="carousel-item active col-12">
                         <section>
                             <h2>Prato Principal</h2>
-                            <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card mb-3 " style="max-width: 540px;">
                                 <input type="checkbox" class="check" name="prato" id="prato-01">
                                 <label for="prato-01">
                                     <div class="row g-0">
@@ -344,7 +347,7 @@
                             </div>
                         </section>
                     </div>
-                </div>
+              </div>
                 <div class="buttons">
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

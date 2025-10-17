@@ -120,7 +120,6 @@
             border: 2px solid purple;
             border-radius: 5px;
             flex-grow: 1;
-            width: 60px;
             margin: 8px;
             padding: 8px;
             font-size: 1.2em;
@@ -141,7 +140,7 @@
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            margin-top: 110px;
+            margin-top: 180px;
             font-size: 1.1rem;
         }
 
@@ -151,10 +150,10 @@
 
         .input {
             width: 90%;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: relative;
         }
 
         button {
@@ -168,7 +167,7 @@
         }
 
         button:hover {
-            transform: scale(1.1);
+            transform:scale(1.1);
         }
     </style>
 </head>
@@ -180,8 +179,18 @@
             <br />
             <p class="all-inputs">
             <p class="input">
-                <input type="text" name="nome_proteina" id="nome_proteina" class="input-form" placeholder="Item..." required>
+                <input type="text" name="nome_proteina" id="nome_proteina" class="input-form" placeholder="Digite o nome da proteína..." required>
                 <button>+</button>
+            </p>
+                          <p class="input">
+            <select name="dia_cardapio" id="dia_cardapio" class="input-form" required>
+              <option value="null">Dia disponível no cardápio</option>
+              <option value="segunda">Segunda Feira</option>
+              <option value="terca">Terça Feira</option>
+              <option value="quarta">Quarta Feira</option>
+              <option value="quinta">Quinta Feira</option>
+              <option value="sexta">Sexta Feira</option>
+            </select>
             </p>
             </p>
             <p class="input">
@@ -203,7 +212,7 @@
         const input = document.createElement("input");
 
         input.type = "text";
-        input.placeholder = "Novo item...";
+        input.placeholder = "Digite o nome da proteína...";
         input.setAttribute("class", "input-form");
         input.setAttribute("id", "nome_proteina");
 
