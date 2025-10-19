@@ -33,39 +33,10 @@
             overflow-x: hidden;
         }
 
-        header {
-            background-color: purple;
-            color: #fff;
-            padding: 30px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: coral;
-            text-align: center;
-        }
-
-        nav>a {
-            text-decoration: none;
-            color: #fff;
-            padding: 20px;
-            position: relative;
-        }
-
-        nav>a::after {
-            content: "";
-            background-color: purple;
-            height: 4px;
-            width: 0;
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            transition: width .5s ease;
-        }
-
-        nav>a:hover::after {
-            width: 100%;
-        }
+       .navbar {
+         background-color: purple;
+         color: #fff;
+       }
 
         section {
             display: flex;
@@ -94,6 +65,7 @@
             background-color: coral;
             border: none;
             border-radius: 6px;
+            margin: 12px;
             padding: 12px;
             font-weight: bold;
             font-size: 1.1rem;
@@ -170,15 +142,23 @@
             height: 100px;
             top: 40%;
         }
+        
+        #button-prev {
+          display: none;
+        }
+        
+        #button-submit {
+          display: none;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h2>Web Menu</h2>
-        <br />
-        <h3>Segunda-Feira</h3>
-    </header>
+<nav class="navbar">
+  <div class="container-fluid">
+    <h2>WEB Menu</h2>
+  </div>
+</nav>
     <!-- <nav class="row">
         <a href="#" class="col-4 col-md-12">Prato</a>
         <a href="#" class="col-4 col-md-12">Acompanhamento</a>
@@ -349,21 +329,39 @@
                     </div>
               </div>
                 <div class="buttons">
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <button class="carousel-control-prev" id="button-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
                     </button>
                 </div>
             </div>
 
-            <input class="submit-button" type="submit" value="Enviar">
+            <input class="submit-button" type="button" data-bs-target="#carouselExample" data-bs-slide="next" id="button-form" value="Continuar">
+            <input class="submit-button" type="submit" id="button-submit" value="Enviar">
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+      let num = 0;
+      const buttonForm = document.querySelector("input#button-form");
+      const buttonSubmit = document.querySelector("input#button-submit");
+      const buttonPrev = document.querySelector("#button-prev");
+      
+      buttonForm.addEventListener("click", () => {
+        num++;
+        
+        if(num >= 2) {
+          buttonSubmit.style.display = "block";
+          buttonForm.style.display = "none";
+        }
+        if(num >= 0) {
+         buttonPrev.style.display = "block";
+         }else {
+         buttonPrev.style.display = "none";
+        }
+      });
+      
+    </script>
 </body>
 
 </html>
