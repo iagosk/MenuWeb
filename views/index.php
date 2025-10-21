@@ -119,7 +119,9 @@ if (isset($_POST["button-submit"])) {
         </header>
         <hr />
         <div class="user-area">
+          <?php if(isset($user)) { ?>
             <h3>Usuário: <?php echo "<br/> {$user->Nome}" ?></h3>
+          <?php } ?>
         </div>
         <hr />
         <ul>
