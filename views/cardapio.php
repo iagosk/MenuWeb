@@ -1,4 +1,6 @@
 <!-- <?php
+include_once('./class/User.php');
+
 // //  Instãncia para conectar o arquivo 'connect.php' com esta página.
 // include_once('../connection/connect.php');
 
@@ -340,6 +342,7 @@
       <input class="submit-button" type="submit" id="button-submit" value="Enviar">
     </form>
   </div>
+  <h1><?php $user->MostrarDados()?></h1>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script>
     let num = 0;
