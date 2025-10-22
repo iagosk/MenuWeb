@@ -1,5 +1,5 @@
 <?php
-include_once('./class/User.php');
+include_once('./class/Usuario.php');
 if (isset($_POST["button-submit"])) {
     $nome = $_POST["nome"];
     $idade = $_POST["idade"];
