@@ -1,6 +1,5 @@
 <?php
-include_once('./Endereco.php');
-class User
+class Usuario
 {
   public string $Nome;
   public string $Senha;

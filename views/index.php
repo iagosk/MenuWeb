@@ -44,17 +44,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="sidebar">
-        <header>
-            <h2>Web Menu</h2>
-        </header>
-        <hr />
-        <div class="user-area">
-          <?php if(isset($user)) { ?>
-            <h3>Usuário: <?php echo "<br/> {$user->Nome}" ?></h3>
-          <?php } ?>
-=======
     <div class="container">
         <div class="title">
             <h1>Menu Web.</h1>
@@ -63,7 +52,6 @@
         <div class="links">
             <a href="./form_cadastro.php">Cadastrar-se</a>
             <a href="./form_login.php">Entrar</a>
->>>>>>> a03b9925a65c08a7918df915d3349e45d577d784
         </div>
     </div>
 

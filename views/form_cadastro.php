@@ -51,7 +51,7 @@
 
 <body>
   <div class="container">
-    <form action="./index.php" method="post">
+    <form action="./main.php" method="post">
       <h2>Cadastro</h2>
       <input type="text" class="input-form" name="nome" id="nome" placeholder="Nome:" required>
       <input type="text" class="input-form" name="senha" id="senha" placeholder="Senha:" required>

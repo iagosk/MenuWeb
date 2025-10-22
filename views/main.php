@@ -1,8 +1,9 @@
 <?php
 include_once('./class/Usuario.php');
+include_once('./class/Endereco.php');
 if (isset($_POST["button-submit"])) {
     $nome = $_POST["nome"];
-    $idade = $_POST["idade"];
+    $idade = $_POST["senha"];
     $rua = $_POST["rua"];
     $bairro = $_POST["bairro"];
     $numero = $_POST["numero"];
@@ -13,7 +14,7 @@ if (isset($_POST["button-submit"])) {
 
 
     $endereco = new Endereco($rua, $bairro, $numero, $cep, $cidade, $estado, $pais);
-    $user = new User($nome, $idade, $endereco);
+    $user = new Usuario($nome, $idade, $endereco);
 }
 
 ?>
