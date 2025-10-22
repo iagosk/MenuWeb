@@ -1,23 +1,3 @@
-<?php
-include_once('./class/User.php');
-if (isset($_POST["button-submit"])) {
-    $nome = $_POST["nome"];
-    $idade = $_POST["idade"];
-    $rua = $_POST["rua"];
-    $bairro = $_POST["bairro"];
-    $numero = $_POST["numero"];
-    $cep = $_POST["cep"];
-    $cidade = $_POST["cidade"];
-    $estado = $_POST["estado"];
-    $pais = $_POST["pais"];
-
-
-    $endereco = new Endereco($rua, $bairro, $numero, $cep, $cidade, $estado, $pais);
-    $user = new User($nome, $idade, $endereco);
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -25,155 +5,58 @@ if (isset($_POST["button-submit"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <title>Página Inicial</title>
+    <title>Web Menu</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
         body {
             background-color: cornsilk;
             height: 100vh;
-            overflow: hidden !important;
         }
 
-        iframe {
+        .container {
             height: 100%;
             width: 100%;
-        }
-
-        .sidebar {
-            background-color: purple;
-            height: 100vh;
-            position: fixed;
-            transition: all .5s ease;
-            z-index: 1;
-        }
-
-        .sidebar>header {
-            background-color: purple;
-            color: #fff;
-            padding: 30px;
-        }
-
-        .sidebar>ul {
-            width: 100%;
-            padding: 40px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: start;
             flex-direction: column;
-            list-style: none;
-        }
-
-        .sidebar>hr {
-            background-color: #fff;
-            border: 2px solid #fff;
-        }
-
-        .sidebar>ul>li {
-            margin: 10px;
-        }
-
-        .sidebar>ul>li>a {
-            background-color: coral;
             color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
+        }
+
+        h1 {
+            background-color: purple;
+            padding: 12px;
             border-radius: 6px;
-            padding: 8px;
-            transition: all .5s ease;
         }
 
-        .buttonSidebar {
-            background: coral;
+        .links {
+            display: flex;
+            gap: 50px;
+        }
+
+        .links > a {
+            background-color: coral;
+            border-radius: 6px;
+            text-decoration: none;
+            padding: 6px;
             color: #fff;
-            border: none;
-            border-radius: 0px 12px 12px 0px;
-            padding: 10px;
-            position: fixed;
-            top: 50%;
-            left: 0px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: all .5s ease;
-            z-index: 1;
-            opacity: 1;
-        }
-
-        .buttonSidebar:hover {
-            transform: scale(1.05);
         }
     </style>
 </head>
 
 <body>
-    <div class="sidebar">
-        <header>
-            <h2>Web Menu</h2>
-        </header>
-        <hr />
-        <div class="user-area">
-            <h3>Usuário: <?php echo "<br/> {$user->Nome}" ?></h3>
+    <div class="container">
+        <div class="title">
+            <h1>Menu Web.</h1>
         </div>
-        <hr />
-        <ul>
-            <li><a href="./form-update.php" target="frame_index">Atualizar Perfil</a></li>
-            <li><a href="./cardapio.php" target="frame_index">Acessar Cardápio</a></li>
-        </ul>
+        <br />
+        <div class="links">
+            <a href="./form_cadastro.php">Cadastrar-se</a>
+            <a href="./form_login.php">Entrar</a>
+        </div>
     </div>
-    <button class="buttonSidebar">
-        <i class="fi fi-rr-angle-right"></i>
-    </button>
-    <iframe src="./cardapio.php" frameborder="0" name="frame_index">
-
-    </iframe>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-    <script>
-        const sidebar = document.querySelector(".sidebar");
-        const buttonSidebar = document.querySelector("button.buttonSidebar");
-        const widthSidebar = sidebar.getBoundingClientRect();
-        const i = document.querySelector("button > i");
-        const links = [...document.querySelectorAll("ul > li > a")];
-
-        let clicked = true;
-
-        sidebar.style.left = `-${widthSidebar.width}px`;
-
-        function ClickSidebar() {
-            if (clicked) {
-                console.log(widthSidebar.width)
-                sidebar.style.left = "0px";
-                buttonSidebar.style.left = `${widthSidebar.width}px`;
-                clicked = false;
-                i.classList.remove("fi-rr-angle-right");
-                i.classList.add("fi-rr-angle-left");
-            } else {
-                clicked = true;
-                sidebar.style.left = `-${widthSidebar.width}px`;
-                buttonSidebar.style.left = `0px`;
-                i.classList.remove("fi-rr-angle-left");
-                i.classList.add("fi-rr-angle-right");
-            }
-        }
-
-        buttonSidebar.addEventListener("click", () => {
-            ClickSidebar();
-        });
-
-        links.forEach(a => {
-            a.addEventListener("click", () => {
-                ClickSidebar();
-            });
-        });
-    </script>
 </body>
 
 </html>

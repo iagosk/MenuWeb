@@ -2,20 +2,20 @@
 class User
 {
   public string $Nome;
-  public int $Idade;
+  public string $Senha;
   public Endereco $Endereco;
 
-  public function __construct(string $nome, int $idade, Endereco $endereco)
+  public function __construct(string $nome, string $senha, Endereco $endereco)
   {
     $this->Nome = $nome;
-    $this->Idade = $idade;
+    $this->Senha = $senha;
     $this->Endereco = $endereco;
   }
 
   public function MostrarDados(): void
   {
     printf("Nome do Usuário: {$this->Nome}<br />");
-    echo "Idade: {$this->Idade}<br />";
+    echo "Senha: {$this->Senha}<br />";
     echo "{$this->Endereco->MostrarEndereco()}<br />";
   }
 }

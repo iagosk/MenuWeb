@@ -13,13 +13,14 @@
     }
 
     .container {
-      width: 100%;
       display: flex;
+      justify-content: center;
     }
+
 
     form {
       height: 100%;
-      width: 100%;
+      width: 500px;
       display: flex;
       padding: 10px;
       gap: 10px;
@@ -28,7 +29,7 @@
 
     h2 {
       background-color: purple;
-      padding: 10px;
+      padding: 14px;
       border-radius: 10px;
       color: #fff;
     }
@@ -43,6 +44,7 @@
       border-radius: 6px;
       color: #fff;
       padding: 10px;
+      font-size: 1.2rem;
     }
   </style>
 </head>
@@ -52,7 +54,8 @@
     <form action="./index.php" method="post">
       <h2>Cadastro</h2>
       <input type="text" class="input-form" name="nome" id="nome" placeholder="Nome:" required>
-      <input type="number" class="input-form" name="idade" id="idade" placeholder="Idade:" required>
+      <input type="text" class="input-form" name="senha" id="senha" placeholder="Senha:" required>
+      <input type="text" class="input-form" name="conf_senha" id="conf_senha" placeholder="Confirme a sua Senha:" required>
       <input type="text" class="input-form" name="rua" id="rua" placeholder="Rua:" required>
       <input type="text" class="input-form" name="bairro" id="bairro" placeholder="Bairro:" required>
       <input type="number" class="input-form" name="numero" id="numero" placeholder="Número:" required>
