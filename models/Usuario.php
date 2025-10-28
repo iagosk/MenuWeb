@@ -1,34 +1,33 @@
 <?php
+// Referência para o arquivo de conexão do Banco de Dados.
+require_once('./connection/connect.php');
+
 // Referência para o arquivo da classe Endereço.
-include_once("./Endereco.php");
+// include_once("./Endereco.php");
 
 // Classe Usuário.
-class Usuario
+class UsuarioModel extends Connect
 {
-  private string $Nome;
-  private string $Senha;
-  private Endereco $Endereco;
+  private string $table;
 
   // método construtor da classe para capturar e armazenar os dados.
-  public function __construct(string $nome, string $senha, Endereco $endereco)
+  function __construct()
   {
-    $this->Nome = $nome;
-    $this->Senha = $senha;
-    $this->Endereco = $endereco;
+    parent::__construct();
+    $this->table = 'usuario';
   }
 
-  public function MostrarDados(): void
+  // Função que retorna todos os Usuários cadastrados no banco de dados.
+  function getAll()
   {
-    printf("Nome do Usuário: {$this->Nome}<br />");
-    echo "Senha: {$this->Senha}<br />";
-    echo "{$this->Endereco->MostrarEndereco()}<br />";
+    $sqlSelect = $this->connection->query("SELECT DISTINCT nomeUsuario FROM $this->table");
+    $resultQuery = $sqlSelect->fetchAll();
+
+    return $resultQuery;
   }
-  
-  public function GetNome(): string {
-    return $this->Nome;
+
+  function insertUsuario(string $nome, string $senha)
+  {
+  $sqlSelect = $this->connection->query("INSERT INTO usuario(nomeUsuario, senha) VALUES  ('{$nome}', '{$senha}')");
   }
 }
-
-// $endereco = new Endereco("Ozana", "Seridó", 29, "59395-000", "Cerro Corá", "RN", "Brasil");
-// $usuario = new Usuario("Matheus", "123", $endereco);
-?>

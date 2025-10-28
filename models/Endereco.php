@@ -1,31 +1,21 @@
-<?php
-// Classe endereço utilizado para armazenar dados de endereço.
-class Endereco
-{
-  private string $Rua;
-  private string $Bairro;
-  private int $Numero;
-  private string $CEP;
-  private string $Cidade;
-  private string $Estado;
-  private string $Pais;
+<?php 
+  require_once('./connection/connect.php');
 
-  // método construtor da classe para capturar os dados e armazená-los.
-  public function __construct(string $rua, string $bairro, int $numero, string $cep, string $cidade, string $estado, string $pais)
-  {
-    $this->Rua = $rua;
-    $this->Bairro = $bairro;
-    $this->Numero = $numero;
-    $this->CEP = $cep;
-    $this->Cidade = $cidade;
-    $this->Estado = $estado;
-    $this->Pais = $pais;
-  }
+  class EnderecoModel extends Connect {
+    private string $table;
 
-  // método da classe para mostrar o endereço completo do usuário.
-  public function MostrarEndereco(): void
-  {
-    echo "Bairro:{$this->Bairro}<br />Rua: {$this->Rua}<br /> nº: {$this->Numero} <br /> CEP: {$this->CEP} <br /> Cidade: {$this->Cidade} <br /> Estado: {$this->Estado} <br /> País: {$this->Pais}.";
+    function __construct()
+    {
+      parent::__construct();
+      $this->table = "endereco";
+    }
+
+    function getAll() 
+    {
+      $sqlSelect = $this->connection->query("SELECT * FROM $this->table");
+      $resultQuery = $sqlSelect->fetchAll();
+
+      return $resultQuery;
+    }
   }
-}
 ?>

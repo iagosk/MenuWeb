@@ -1,15 +1,3 @@
-<?php
-include_once("../controllers/controllerUsuario.php");
-$nome = $_SESSION['nome'];
-$senha = $_SESSION['senha'];
-$rua = $_SESSION['rua'];
-$bairro = $_SESSION['bairro'];
-$numero = $_SESSION['numero'];
-$cep = $_SESSION['cep'];
-$cidade = $_SESSION['cidade'];
-$estado = $_SESSION['estado'];
-$pais = $_SESSION['pais'];
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -115,24 +103,7 @@ $pais = $_SESSION['pais'];
             <h2>Web Menu</h2>
         </header>
         <hr />
-        <?php if (isset($nome)) { ?>
-            <div class="user-area">
-<<<<<<< HEAD
-                <h3>Usuário: <?php echo "<br/> {$user->GetNome()}" ?></h3>
-=======
-                <h3>Dados do Usuário</h3>
-                <h5>Nome: <?php echo "{$nome}" ?></h5>
-                <h5>Senha: <?php echo "{$senha}" ?></h5>
-                <h3>Endereço</h3>
-                <h5>Rua: <?php echo "{$rua}" ?></h5>
-                <h5>Bairro: <?php echo "{$bairro}" ?></h5>
-                <h5>CEP: <?php echo "{$cep}" ?></h5>
-                <h5>Cidade: <?php echo "{$cidade}" ?></h5>
-                <h5>Estado: <?php echo "{$estado}" ?></h5>
-                <h5>País: <?php echo "{$pais}" ?></h5>
->>>>>>> c09eed2fcc2262a3ee75b3246b3ceb3c0b65fee8
-            </div>
-        <?php } ?>
+        <?php print_r($resultData) ?>
         <hr />
         <ul>
             <li><a href="./form_update.php" target="frame_index">Atualizar Endereço</a></li>

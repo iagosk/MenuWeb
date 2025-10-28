@@ -167,14 +167,14 @@
         }
 
         button:hover {
-            transform:scale(1.1);
+            transform: scale(1.1);
         }
     </style>
 </head>
 
 <body>
     <div class="form-prato">
-        <form action="">
+        <form action="../../index.php" method="post">
             <h2 class="title">Adicionar novos pratos.</h2>
             <br />
             <p class="all-inputs">
@@ -183,15 +183,15 @@
                 <button>+</button>
             </p>
             </p>
-                          <p class="input">
-            <select name="dia_cardapio" id="dia_cardapio" class="input-form" required>
-              <option value="null">Dia disponível no cardápio</option>
-              <option value="segunda">Segunda Feira</option>
-              <option value="terca">Terça Feira</option>
-              <option value="quarta">Quarta Feira</option>
-              <option value="quinta">Quinta Feira</option>
-              <option value="sexta">Sexta Feira</option>
-            </select>
+            <p class="input">
+                <select name="dia_cardapio" id="dia_cardapio" class="input-form" required>
+                    <option value="null">Dia disponível no cardápio</option>
+                    <option value="segunda">Segunda Feira</option>
+                    <option value="terca">Terça Feira</option>
+                    <option value="quarta">Quarta Feira</option>
+                    <option value="quinta">Quinta Feira</option>
+                    <option value="sexta">Sexta Feira</option>
+                </select>
             </p>
             <p class="input">
                 <input class="button-form" type="submit" value="Enviar" />
