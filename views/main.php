@@ -121,7 +121,7 @@ if (isset($_POST["button-submit"])) {
         <hr />
         <?php if (isset($user)) { ?>
             <div class="user-area">
-                <h3>Usuário: <?php echo "<br/> {$user->Nome}" ?></h3>
+                <h3>Usuário: <?php echo "<br/> {$user->GetNome()}" ?></h3>
             </div>
         <?php } ?>
         <hr />

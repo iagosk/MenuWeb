@@ -1,13 +1,13 @@
 <?php
 class Endereco
 {
-  public string $Rua;
-  public string $Bairro;
-  public int $Numero;
-  public string $CEP;
-  public string $Cidade;
-  public string $Estado;
-  public string $Pais;
+  private string $Rua;
+  private string $Bairro;
+  private int $Numero;
+  private string $CEP;
+  private string $Cidade;
+  private string $Estado;
+  private string $Pais;
 
   public function __construct(string $rua, string $bairro, int $numero, string $cep, string $cidade, string $estado, string $pais)
   {

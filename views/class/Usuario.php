@@ -1,9 +1,9 @@
 <?php
 class Usuario
 {
-  public string $Nome;
-  public string $Senha;
-  public Endereco $Endereco;
+  private string $Nome;
+  private string $Senha;
+  private Endereco $Endereco;
 
   public function __construct(string $nome, string $senha, Endereco $endereco)
   {
@@ -17,6 +17,10 @@ class Usuario
     printf("Nome do Usuário: {$this->Nome}<br />");
     echo "Senha: {$this->Senha}<br />";
     echo "{$this->Endereco->MostrarEndereco()}<br />";
+  }
+  
+  public function GetNome(): string {
+    return $this->Nome;
   }
 }
 ?>

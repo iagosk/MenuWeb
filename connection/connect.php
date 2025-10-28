@@ -8,7 +8,7 @@
     // Variável que contém a senha do Banco de Dados.
     $dbPassword = "";
     // Variável que contém o nome Banco de Dados.
-    $dbName = "cardapios";
+    $dbName = "MenuWeb";
     
     // Variável que contém o método 'mysqli', capaz de usar todas as variáveis anteriores como argumento e estabelecer a conexão com o servidor do Banco de Dados.
     $connection = new mysqli($dbHostname, $dbUsername, $dbPassword, $dbName);
