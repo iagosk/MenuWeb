@@ -1,24 +1,15 @@
 <?php
-include_once('./class/Usuario.php');
-include_once('./class/Endereco.php');
-if (isset($_POST["button-submit"])) {
-    $nome = $_POST["nome"];
-    $idade = $_POST["senha"];
-    $rua = $_POST["rua"];
-    $bairro = $_POST["bairro"];
-    $numero = $_POST["numero"];
-    $cep = $_POST["cep"];
-    $cidade = $_POST["cidade"];
-    $estado = $_POST["estado"];
-    $pais = $_POST["pais"];
-
-
-    $endereco = new Endereco($rua, $bairro, $numero, $cep, $cidade, $estado, $pais);
-    $user = new Usuario($nome, $idade, $endereco);
-}
-
+include_once("../controllers/controllerUsuario.php");
+$nome = $_SESSION['nome'];
+$senha = $_SESSION['senha'];
+$rua = $_SESSION['rua'];
+$bairro = $_SESSION['bairro'];
+$numero = $_SESSION['numero'];
+$cep = $_SESSION['cep'];
+$cidade = $_SESSION['cidade'];
+$estado = $_SESSION['estado'];
+$pais = $_SESSION['pais'];
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -110,6 +101,11 @@ if (isset($_POST["button-submit"])) {
         .buttonSidebar:hover {
             transform: scale(1.05);
         }
+
+        .user-area {
+            color: #fff;
+            padding: 30px;
+        }
     </style>
 </head>
 
@@ -119,9 +115,22 @@ if (isset($_POST["button-submit"])) {
             <h2>Web Menu</h2>
         </header>
         <hr />
-        <?php if (isset($user)) { ?>
+        <?php if (isset($nome)) { ?>
             <div class="user-area">
+<<<<<<< HEAD
                 <h3>Usuário: <?php echo "<br/> {$user->GetNome()}" ?></h3>
+=======
+                <h3>Dados do Usuário</h3>
+                <h5>Nome: <?php echo "{$nome}" ?></h5>
+                <h5>Senha: <?php echo "{$senha}" ?></h5>
+                <h3>Endereço</h3>
+                <h5>Rua: <?php echo "{$rua}" ?></h5>
+                <h5>Bairro: <?php echo "{$bairro}" ?></h5>
+                <h5>CEP: <?php echo "{$cep}" ?></h5>
+                <h5>Cidade: <?php echo "{$cidade}" ?></h5>
+                <h5>Estado: <?php echo "{$estado}" ?></h5>
+                <h5>País: <?php echo "{$pais}" ?></h5>
+>>>>>>> c09eed2fcc2262a3ee75b3246b3ceb3c0b65fee8
             </div>
         <?php } ?>
         <hr />
