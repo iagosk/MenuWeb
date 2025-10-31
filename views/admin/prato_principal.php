@@ -73,12 +73,10 @@
 
         main {
             background-color: #fff;
-            height: 100vh;
             width: 100%;
         }
 
         iframe {
-            height: 100%;
             width: 100%;
         }
 
@@ -101,7 +99,7 @@
             align-items: center;
             justify-content: start;
             flex-direction: column;
-            overflow: hidden;
+            overflow-y: visible;
         }
 
         .title {
@@ -119,7 +117,7 @@
         .input-form {
             border: 2px solid purple;
             border-radius: 5px;
-            flex-grow: 1;
+            /* flex-grow: 1; */
             margin: 8px;
             padding: 8px;
             font-size: 1.2em;
@@ -153,6 +151,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-direction: column;
             position: relative;
         }
 
@@ -179,12 +178,8 @@
             <br />
             <p class="all-inputs">
             <p class="input">
-                <input type="text" name="nome_prato" id="nome_prato" class="input-form" placeholder="Digite o nome do prato..." required>
-                <button>+</button>
-            </p>
-            </p>
-            <p class="input">
-                <select name="dia_cardapio" id="dia_cardapio" class="input-form" required>
+                <input type="text" name="nomePrato[]" id="nome_prato" class="input-form" placeholder="Digite o nome do prato..." required>
+                <select name="diaCardapio[]" id="dia_cardapio" class="input-form" required>
                     <option value="null">Dia disponível no cardápio</option>
                     <option value="segunda">Segunda Feira</option>
                     <option value="terca">Terça Feira</option>
@@ -192,8 +187,8 @@
                     <option value="quinta">Quinta Feira</option>
                     <option value="sexta">Sexta Feira</option>
                 </select>
-            </p>
-            <p class="input">
+                <button>+</button>
+                
                 <input class="button-form" type="submit" value="Enviar" />
             </p>
         </form>
@@ -213,34 +208,38 @@
         const p02 = document.createElement("p");
         const input = document.createElement("input");
         const select = document.createElement("select");
+        const optionNull = document.createElement("option");
         const optionSegunda = document.createElement("option");
         const optionTerca = document.createElement("option");
         const optionQuarta = document.createElement("option");
         const optionQuinta = document.createElement("option");
         const optionSexta = document.createElement("option");
-        
+
+        optionNull.value = "null";
         optionSegunda.value = "segunda";
         optionTerca.value = "terca";
         optionQuarta.value = "quarta";
         optionQuinta.value = "quinta";
         optionSexta.value = "sexta";
-        
-        optionSegunda.innerHTML = "segunda";
-        optionTerca.innerHTML = "terca";
-        optionQuarta.innerHTML = "quarta";
-        optionQuinta.innerHTML = "quinta";
-        optionSexta.innerHTML = "sexta";
-        
+
+        optionNull.innerHTML = "Dia disponível no cardápio";
+        optionSegunda.innerHTML = "Segunda Feira";
+        optionTerca.innerHTML = "Terça Feira";
+        optionQuarta.innerHTML = "Quarta";
+        optionQuinta.innerHTML = "Quinta Feira";
+        optionSexta.innerHTML = "Sexta Feira";
+
 
         input.type = "text";
         input.placeholder = "Digite o nome do prato...";
         input.setAttribute("class", "input-form");
-        input.setAttribute("id", "nome_prato[]");
-        input.setAttribute("name", "nome_prato[]");
-        
-        select.setAttribute("name", "dia_cardapio[]");
-        select.setAttribute("id", "dia_cardapio[]");
+        input.setAttribute("id", "nomePrato[]");
+        input.setAttribute("name", "nomePrato[]");
+
+        select.setAttribute("name", "diaCardapio[]");
+        select.setAttribute("id", "diaCardapio[]");
         select.setAttribute("class", "input-form");
+        select.appendChild(optionNull);
         select.appendChild(optionSegunda);
         select.appendChild(optionTerca);
         select.appendChild(optionQuarta);
@@ -255,11 +254,12 @@
         p.setAttribute("class", "input");
         p02.setAttribute("class", "input");
         p.appendChild(input);
-        p02.appendChild(select);
         p.appendChild(button);
+        p02.appendChild(input);
+        p02.appendChild(select);
+        p02.appendChild(button);
         inputs.prepend(p);
-        inputs.appendChild(p02);
-        form.appendChild(inputs);
+        inputs.prepend(p02);
     });
 </script>
 

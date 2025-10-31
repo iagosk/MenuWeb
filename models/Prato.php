@@ -1,6 +1,7 @@
 <?php
   require_once('./connection/connect.php');
 
+  // Classe/Modelo Prato
   class PratoModel extends Connect {
     private string $table;
 
@@ -20,7 +21,8 @@
 
     function insertPrato(string $nome, string $dia)
     {
-      $sqlSelect = $this->connection->query("INSERT INTO prato(nome_prato, dia_prato) VALUES('{$nome}','{$dia}')");
+      // echo $nome;
+      $sqlSelect = $this->connection->query("INSERT INTO $this->table(nomePrato, diaCardapio) VALUES('{$nome}','{$dia}')");
     }
   }
 ?>

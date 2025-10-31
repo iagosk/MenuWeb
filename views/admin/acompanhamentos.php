@@ -1,4 +1,4 @@
-<!-- Iframe para o formulário de acompanhamentos -->
+<!-- Iframe para o formulário de prato principal -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Formulário dos Acompanhamentos</title>
+    <title>Formulário do Acompanhamento</title>
     <style>
         * {
             margin: 0;
@@ -73,16 +73,14 @@
 
         main {
             background-color: #fff;
-            height: 100vh;
             width: 100%;
         }
 
         iframe {
-            height: 100%;
             width: 100%;
         }
 
-        .form-acompanhamento {
+        .form-acomp {
             height: 100%;
             width: 100%;
             background: cornsilk;
@@ -101,7 +99,7 @@
             align-items: center;
             justify-content: start;
             flex-direction: column;
-            overflow: hidden;
+            overflow-y: visible;
         }
 
         .title {
@@ -119,7 +117,7 @@
         .input-form {
             border: 2px solid purple;
             border-radius: 5px;
-            flex-grow: 1;
+            /* flex-grow: 1; */
             margin: 8px;
             padding: 8px;
             font-size: 1.2em;
@@ -153,6 +151,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-direction: column;
             position: relative;
         }
 
@@ -167,33 +166,29 @@
         }
 
         button:hover {
-            transform:scale(1.1);
+            transform: scale(1.1);
         }
     </style>
 </head>
 
 <body>
-    <div class="form-acompanhamento">
-        <form action="">
-            <h2 class="title">Adicionar novos acompanhamentos.</h2>
+    <div class="form-acomp">
+        <form action="../../index.php" method="post">
+            <h2 class="title">Adicionar novos Acompanhamentos.</h2>
             <br />
             <p class="all-inputs">
             <p class="input">
-                <input type="text" name="nome_prato" id="nome_prato" class="input-form" placeholder="Digite o nome do acompanhamento..." required>
+                <input type="text" name="nomeAcomp[]" id="nomeAcomp" class="input-form" placeholder="Digite o nome do Acompanhamento..." required>
+                <select name="diaCardapio[]" id="dia_cardapio" class="input-form" required>
+                    <option value="null">Dia disponível no cardápio</option>
+                    <option value="segunda">Segunda Feira</option>
+                    <option value="terca">Terça Feira</option>
+                    <option value="quarta">Quarta Feira</option>
+                    <option value="quinta">Quinta Feira</option>
+                    <option value="sexta">Sexta Feira</option>
+                </select>
                 <button>+</button>
-            </p>
-              <p class="input">
-                <select name="dia_cardapio" id="dia_cardapio" class="input-form" required>
-                  <option value="null">Dia disponível no cardápio</option>
-                  <option value="segunda">Segunda Feira</option>
-                  <option value="terca">Terça Feira</option>
-                  <option value="quarta">Quarta Feira</option>
-                  <option value="quinta">Quinta Feira</option>
-                  <option value="sexta">Sexta Feira</option>
-              </select>
-            </p>
-            </p>
-            <p class="input">
+                
                 <input class="button-form" type="submit" value="Enviar" />
             </p>
         </form>
@@ -206,15 +201,50 @@
     button.addEventListener("click", (event) => {
         event.preventDefault();
         const body = document.querySelector("body");
+        const form = document.querySelector("form");
         const inputs = document.querySelector("p.all-inputs");
         // const button = document.createElement("button");
         const p = document.createElement("p");
+        const p02 = document.createElement("p");
         const input = document.createElement("input");
+        const select = document.createElement("select");
+        const optionNull = document.createElement("option");
+        const optionSegunda = document.createElement("option");
+        const optionTerca = document.createElement("option");
+        const optionQuarta = document.createElement("option");
+        const optionQuinta = document.createElement("option");
+        const optionSexta = document.createElement("option");
+
+        optionNull.value = "null";
+        optionSegunda.value = "segunda";
+        optionTerca.value = "terca";
+        optionQuarta.value = "quarta";
+        optionQuinta.value = "quinta";
+        optionSexta.value = "sexta";
+
+        optionNull.innerHTML = "Dia disponível no cardápio";
+        optionSegunda.innerHTML = "Segunda Feira";
+        optionTerca.innerHTML = "Terça Feira";
+        optionQuarta.innerHTML = "Quarta";
+        optionQuinta.innerHTML = "Quinta Feira";
+        optionSexta.innerHTML = "Sexta Feira";
+
 
         input.type = "text";
         input.placeholder = "Digite o nome do acompanhamento...";
         input.setAttribute("class", "input-form");
-        input.setAttribute("id", "nome_acompanhamento");
+        input.setAttribute("id", "nomeAcomp[]");
+        input.setAttribute("name", "nomeAcomp[]");
+
+        select.setAttribute("name", "diaCardapio[]");
+        select.setAttribute("id", "diaCardapio[]");
+        select.setAttribute("class", "input-form");
+        select.appendChild(optionNull);
+        select.appendChild(optionSegunda);
+        select.appendChild(optionTerca);
+        select.appendChild(optionQuarta);
+        select.appendChild(optionQuinta);
+        select.appendChild(optionSexta);
 
         // button.innerHTML = "+";
         // button.addEventListener("click", (event) => {
@@ -222,9 +252,14 @@
         // })
 
         p.setAttribute("class", "input");
+        p02.setAttribute("class", "input");
         p.appendChild(input);
         p.appendChild(button);
+        p02.appendChild(input);
+        p02.appendChild(select);
+        p02.appendChild(button);
         inputs.prepend(p);
+        inputs.prepend(p02);
     });
 </script>
 

@@ -21,7 +21,6 @@
 
     body {
         background-color: cornsilk;
-        height: 100vh;
     }
 
     header {
@@ -85,7 +84,7 @@
     }
 
     iframe {
-        height: 100%;
+        height: 100dvh;
         width: 100%;
     }
 

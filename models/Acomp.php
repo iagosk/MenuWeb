@@ -1,7 +1,8 @@
 <?php
 require_once('./connection/connect.php');
 
-class AcompanhamentoModel extends Connect
+// Classe/Modelo Acomp.
+class AcompModel extends Connect
 {
   private string $table;
 
@@ -17,5 +18,10 @@ class AcompanhamentoModel extends Connect
     $resultQuery = $sqlSelect->fetchAll();
 
     return $resultQuery;
+  }
+  
+  function insertAcomp(string $nome, string $dia)
+  {
+    $sqlSelect = $this->connection->query("INSERT INTO $this->table(nomeAcomp, diaCardapio) VALUES('{$nome}','{$dia}')");
   }
 }

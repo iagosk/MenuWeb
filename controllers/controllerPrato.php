@@ -1,6 +1,7 @@
 <?php 
     require('./models/Prato.php');  
 
+    // Controlador da Classe/Modelo Prato.
     class ControllerPrato {
         private $model;
 
