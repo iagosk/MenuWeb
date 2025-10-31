@@ -20,7 +20,7 @@
 
     function insertPrato(string $nome, string $dia)
     {
-      $sqlSelect = $this->connection->query("INSERT INTO prato(nomePrato, dia) VALUES('{$nome}','{$dia}')");
+      $sqlSelect = $this->connection->query("INSERT INTO prato(nome_prato, dia_prato) VALUES('{$nome}','{$dia}')");
     }
   }
 ?>

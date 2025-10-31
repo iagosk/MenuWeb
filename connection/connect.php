@@ -1,7 +1,7 @@
 <!-- Arquivo de Conexão com o banco de Dados MYSQL -->
 
 <?php 
-   define('HOST','localhost');
+   define('HOST','127.0.0.1');
    define('DATABASENAME','MenuWeb');
    define('USER','root');
    define('PASSWORD','');
@@ -17,8 +17,7 @@
     function connectDatabase()
     {
         try {
-            $this->connection = new PDO('mysql:hos='.HOST.';dbname='.DATABASENAME, USER, PASSWORD);
-            // echo "Banco de Dados MYSQL conectado com sucesso!";
+            $this->connection = new PDO('mysql:host='.HOST.';dbname='.DATABASENAME, USER, PASSWORD);
         }
         catch (PDOException $e)
         {

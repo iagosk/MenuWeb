@@ -206,15 +206,46 @@
     button.addEventListener("click", (event) => {
         event.preventDefault();
         const body = document.querySelector("body");
+        const form = document.querySelector("form");
         const inputs = document.querySelector("p.all-inputs");
         // const button = document.createElement("button");
         const p = document.createElement("p");
+        const p02 = document.createElement("p");
         const input = document.createElement("input");
+        const select = document.createElement("select");
+        const optionSegunda = document.createElement("option");
+        const optionTerca = document.createElement("option");
+        const optionQuarta = document.createElement("option");
+        const optionQuinta = document.createElement("option");
+        const optionSexta = document.createElement("option");
+        
+        optionSegunda.value = "segunda";
+        optionTerca.value = "terca";
+        optionQuarta.value = "quarta";
+        optionQuinta.value = "quinta";
+        optionSexta.value = "sexta";
+        
+        optionSegunda.innerHTML = "segunda";
+        optionTerca.innerHTML = "terca";
+        optionQuarta.innerHTML = "quarta";
+        optionQuinta.innerHTML = "quinta";
+        optionSexta.innerHTML = "sexta";
+        
 
         input.type = "text";
         input.placeholder = "Digite o nome do prato...";
         input.setAttribute("class", "input-form");
-        input.setAttribute("id", "nome_prato");
+        input.setAttribute("id", "nome_prato[]");
+        input.setAttribute("name", "nome_prato[]");
+        
+        select.setAttribute("name", "dia_cardapio[]");
+        select.setAttribute("id", "dia_cardapio[]");
+        select.setAttribute("class", "input-form");
+        select.appendChild(optionSegunda);
+        select.appendChild(optionTerca);
+        select.appendChild(optionQuarta);
+        select.appendChild(optionQuinta);
+        select.appendChild(optionSexta);
 
         // button.innerHTML = "+";
         // button.addEventListener("click", (event) => {
@@ -222,9 +253,13 @@
         // })
 
         p.setAttribute("class", "input");
+        p02.setAttribute("class", "input");
         p.appendChild(input);
+        p02.appendChild(select);
         p.appendChild(button);
         inputs.prepend(p);
+        inputs.appendChild(p02);
+        form.appendChild(inputs);
     });
 </script>
 
