@@ -173,7 +173,7 @@
 
 <body>
     <div class="form-proteina">
-        <form action="../../index.php" method="post">
+        <form action="../../routes/cadastroProteina.php" method="post">
             <h2 class="title">Adicionar novas Proteínas.</h2>
             <br />
             <p class="all-inputs">

@@ -51,10 +51,10 @@
 
 <body>
   <div class="container">
-    <form action="../index.php" method="post">
+    <form action="../routes/cadastroUsuario.php" method="POST">
       <h2>Cadastro</h2>
-      <input type="text" class="input-form" name="nome" id="nome" placeholder="Nome:" required>
-      <input type="text" class="input-form" name="senha" id="senha" placeholder="Senha:" required>
+      <input type="text" class="input-form" name="nomeUsuario" id="nomeUsuario" placeholder="Nome:" required>
+      <input type="text" class="input-form" name="senhaUsuario" id="senhaUsuario" placeholder="Senha:" required>
       <input type="text" class="input-form" name="conf_senha" id="conf_senha" placeholder="Confirme a sua Senha:" required>
       <input type="text" class="input-form" name="rua" id="rua" placeholder="Rua:" required>
       <input type="text" class="input-form" name="bairro" id="bairro" placeholder="Bairro:" required>

@@ -173,7 +173,7 @@
 
 <body>
     <div class="form-acomp">
-        <form action="../../index.php" method="post">
+        <form action="../../routes/cadastroAcomp.php" method="post">
             <h2 class="title">Adicionar novos Acompanhamentos.</h2>
             <br />
             <p class="all-inputs">

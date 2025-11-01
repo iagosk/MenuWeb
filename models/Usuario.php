@@ -1,6 +1,6 @@
 <?php
 // Referência para o arquivo de conexão do Banco de Dados.
-require_once('./connection/connect.php');
+require_once('../connection/connect.php');
 
 // Referência para o arquivo da classe Endereço.
 // include_once("./Endereco.php");
@@ -20,7 +20,7 @@ class UsuarioModel extends Connect
   // Função que retorna todos os Usuários cadastrados no banco de dados.
   function getAll()
   {
-    $sqlSelect = $this->connection->query("SELECT DISTINCT nome FROM $this->table");
+    $sqlSelect = $this->connection->query("SELECT DISTINCT nomeUsuario FROM $this->table");
     $resultQuery = $sqlSelect->fetchAll();
 
     return $resultQuery;
@@ -28,6 +28,6 @@ class UsuarioModel extends Connect
 
   function insertUsuario(string $nome, string $senha)
   {
-  $sqlSelect = $this->connection->query("INSERT INTO usuario(nome, senha) VALUES  ('{$nome}', '{$senha}')");
+  $sqlSelect = $this->connection->query("INSERT INTO usuario(nomeUsuario, senhaUsuario) VALUES  ('{$nome}', '{$senha}')");
   }
 }

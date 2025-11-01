@@ -1,3 +1,7 @@
+<?php 
+    require_once('../routes/cadastroUsuario.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -90,7 +94,7 @@
             transform: scale(1.05);
         }
 
-        .user-area {
+        .usuarioArea {
             color: #fff;
             padding: 30px;
         }
@@ -103,17 +107,19 @@
             <h2>Web Menu</h2>
         </header>
         <hr />
-        <?php print_r($resultData) ?>
+        <div class="usuarioArea">
+            <h2>Usuário: </h2><h4><?php echo $nome ?></h4>
+        </div>
         <hr />
         <ul>
-            <li><a href="./form_update.php" target="frame_index">Atualizar Endereço</a></li>
-            <li><a href="./cardapio.php" target="frame_index">Acessar Cardápio</a></li>
+            <li><a href="../views/form_update.php" target="frame_index">Atualizar Endereço</a></li>
+            <li><a href="../views/cardapio.php" target="frame_index">Acessar Cardápio</a></li>
         </ul>
     </div>
     <button class="buttonSidebar">
         <i class="fi fi-rr-angle-right"></i>
     </button>
-    <iframe src="./cardapio.php" frameborder="0" name="frame_index">
+    <iframe src="../views/cardapio.php" frameborder="0" name="frame_index">
 
     </iframe>
 

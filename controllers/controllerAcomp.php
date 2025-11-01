@@ -1,6 +1,6 @@
 <?php
 
-require_once("./models/Acomp.php");
+require_once("../models/Acomp.php");
 
 // Controlador da Classe/Modelo Acomp.
 class ControllerAcomp
@@ -20,6 +20,12 @@ class ControllerAcomp
 
     function insertAcomp(string $nome, string $dia)
     {
-        $resultData = $this->model->insertAcomp($nome, $dia);
+        try {
+            $resultData = $this->model->insertAcomp($nome, $dia);
+            require_once('../views/admin/sucessoCadastro.php');
+        } catch (PDOException $error) {
+            // echo "Error!" . $e->getMessage();
+            require_once('../views/admin/falhaCadastro.php');
+        }
     }
 }

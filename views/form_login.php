@@ -10,17 +10,19 @@
   <style>
     body {
       background-color: cornsilk;
+      height: 100vh;
     }
 
     .container {
+      height: 100%;
       display: flex;
+      align-items: center;
       justify-content: center;
     }
 
 
     form {
-      height: 100%;
-      width: 500px;
+      width: 450px;
       display: flex;
       padding: 10px;
       gap: 10px;

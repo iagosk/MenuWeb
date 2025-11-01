@@ -1,5 +1,5 @@
 <?php
-require_once("./connection/connect.php");
+require_once("../connection/connect.php");
 
 // Classe/Modelo Proteina.
 class ProteinaModel extends Connect

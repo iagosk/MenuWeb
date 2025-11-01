@@ -173,7 +173,7 @@
 
 <body>
     <div class="form-prato">
-        <form action="../../index.php" method="post">
+        <form action="../../routes/cadastroPrato.php" method="post">
             <h2 class="title">Adicionar novos pratos.</h2>
             <br />
             <p class="all-inputs">

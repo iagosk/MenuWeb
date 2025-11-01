@@ -1,5 +1,5 @@
 <?php
-require_once('./connection/connect.php');
+require_once('../connection/connect.php');
 
 // Classe/Modelo Acomp.
 class AcompModel extends Connect
